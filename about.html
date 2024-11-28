@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Kavivanar&family=Poppins:wght@100;200;300;400;500;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+    <title>EASC</title>
+</head>
+<body>
+    <!-- Navigation Section -->
+    <section class="sub-header">
+        <nav>
+            <a href="main.html"><img src="image/collage main logo.png" alt="College Logo"></a> <!-- Updated alt text -->
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="main.html">HOME</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="Staff-1.html">STAFFS</a></li>
+                    <li><a href="Facilities.html">FACILITIES</a></li>
+                    <li><a href="contact.html">CONTACT</a></li> <!-- Fixed "CONTECT" to "CONTACT" -->
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i> <!-- Burger Menu Icon -->
+        </nav>
+        <h1>About Us</h1>
+    </section>
+
+    <!-- About Us Section -->
+    <section class="about-us">
+        <div class="row">
+            <div class="about-col">
+                <h1>We are the my college</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                   Veritatis eos placeat sunt sed voluptatem voluptate rem libero cupiditate facilis quisquam commodi magni quia mollitia,
+                   quidem deserunt at ullam cumque quis culpa doloribus eum enim nobis.
+                   Velit non consectetur necessitatibus quae, odio laborum iure itaque perspiciatis ipsa eum, nobis cum eveniet.
+                </p>
+                <!-- <a href="" class="hero-btn red-btn">EXPLORE NOW</a> -->
+            </div>
+            <div class="about-col">
+                <img src="image/about.jpg" alt="College Staff Group Image"> <!-- Added alt text for accessibility -->
+            </div>
+        </div>
+     </section>
+
+    <!-- Footer Section -->
+    <section class="footer">
+        <h4>About Us</h4>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Perspiciatis perferendis architecto, quibusdam beatae nam odio itaque ab ipsa nemo necessitatibus?
+        </p>
+        <div class="icons">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-whatsapp"></i>
+            <i class="fa-brands fa-linkedin"></i>
+            <i class="fa-brands fa-instagram"></i>
+        </div>
+    </section>
+
+    <!-- JavaScript for Toggle Menu -->
+    <script>
+        var navLinks = document.getElementById("navLinks");
+
+        function showMenu() {
+            navLinks.style.right = "0";
+        }
+
+        function hideMenu() {
+            navLinks.style.right = "-200px";
+        }
+    </script>
+
+</body>
+</html>
