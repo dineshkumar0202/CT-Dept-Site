@@ -57,6 +57,17 @@ document.getElementById("moreBtn").addEventListener("click", function(event) {
 
 
 
+// staffs 
+
+
+// Initialize the carousel with auto-slide (optional)
+var myCarousel = document.querySelector('#testimonialCarousel');
+var carousel = new bootstrap.Carousel(myCarousel, {
+  interval: 3000, // Auto-slide every 3 seconds
+  pause: 'hover'
+});
+
+
 //  Email verification code 
 
 
@@ -86,6 +97,7 @@ document.getElementById('contactForm').addEventListener('submit', function(event
     // If no errors, clear the error message
     errorMessage.textContent = '';
 });
+
 
 
 
