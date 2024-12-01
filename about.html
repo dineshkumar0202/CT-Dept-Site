@@ -9,13 +9,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Kavivanar&family=Poppins:wght@100;200;300;400;500;600;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="main.css">
-    <title>EASC</title>
+    <link rel="icon" href="image/collage main logo.png" type="image/png" >
+    <title>EASC-Computer Technology</title>
 </head>
 <body>
     <!-- Navigation Section -->
     <section class="sub-header">
         <nav>
-            <a href="main.html"><img src="image/collage main logo.png" alt="College Logo"></a> <!-- Updated alt text -->
+            <a href="main.html"><img src="image/CT-icons.png" alt="College Logo"></a> <!-- Updated alt text -->
             <div class="nav-links" id="navLinks">
                 <i class="fa fa-times" onclick="hideMenu()"></i>
                 <ul>
@@ -32,31 +33,26 @@
     </section>
 
     <!-- About Us Section -->
-    <section class="about-us">
-        <div class="row">
-            <div class="about-col">
-                <h1>We are the my college</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                   Veritatis eos placeat sunt sed voluptatem voluptate rem libero cupiditate facilis quisquam commodi magni quia mollitia,
-                   quidem deserunt at ullam cumque quis culpa doloribus eum enim nobis.
-                   Velit non consectetur necessitatibus quae, odio laborum iure itaque perspiciatis ipsa eum, nobis cum eveniet.
-                </p>
-                <!-- <a href="" class="hero-btn red-btn">EXPLORE NOW</a> -->
-            </div>
-            <div class="about-col">
-                <img src="image/about.jpg" alt="College Staff Group Image"> <!-- Added alt text for accessibility -->
-            </div>
+    <!-- Info Section -->
+    <section class="info-section content-wrapper">
+        <div class="info-text">
+            <h2 class="info-title">Computer Technology </h2>
+            <!-- <div class="divider"></div> -->
+            <p class="info-paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <p class="info-paragraph">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
         </div>
-     </section>
-
-
-       <!-- Location Section -->
-     <section class="location">
-        <div >
-        <h1>LIVE LOCATION</h1>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3270.574845045401!2d77.69626837415058!3d11.300803488881582!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba96e52bc3f6c83%3A0x2ab8708d1c8b3a3!2sErode%20Arts%20and%20Science%20College!5e1!3m2!1sen!2sin!4v1731635154264!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div class="info-image">
+            <img src="image/staff-1.webp" alt="About Us Image" class="image-style">
         </div>
     </section>
+
+    <!-- Back to Top Button -->
+    <button class="top-button" onclick="scrollToTop()">&#8679;</button>
+
+
+
+       
+     
       <br>
 
     <!-- Footer Section -->
@@ -89,6 +85,6 @@
             navLinks.style.right = "-200px";
         }
     </script>
-
+<script src="main.js"></script>
 </body>
 </html>

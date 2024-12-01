@@ -100,4 +100,13 @@ document.getElementById('contactForm').addEventListener('submit', function(event
 
 
 
+// about us 
+function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+
+
+
+
 
