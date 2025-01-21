@@ -128,6 +128,57 @@ nav .fa{
     }
 }
 
+
+/* Popup Styling */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: auto; /* Enable scrolling if content overflows */
+    z-index: 1000;
+}
+
+.popup {
+    position: relative;
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 50%; /* Limit the width of the popup */
+    max-height: 100%; /* Limit the height of the popup */
+    overflow: auto; /* Enable scrolling within the popup */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: black;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: white;
+}
+
+.popup img{
+    width: 95%;
+    height: 97%;
+}
+
+.Images{
+    width: 20rem;
+    height: 50vh;
+}
+
 /* course section start here */
 
 .course{
@@ -486,30 +537,165 @@ nav .fa{
 
 
 /* ---------footer---------- */
-.footer{
-    width: 100%;
+/* General Footer Styles */
+#footer {
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+    padding: 20px 0;
+    background-color: lightcyan;
     text-align: center;
-    padding: 30px 0;
-}
-.footer h4{
-    margin-bottom: 25px;
-    margin-top: 20px;
-    font-weight: 600;
-    color: #000;
-}
-.footer p{
-    color: #777;
-}
-.icons .fa-brands{
-    color: #f44336;
-    margin: 0 13px;
-    cursor: pointer;
-    padding: 18px 0;
-}
-.icons .fa-brands:hover{
-    color: #000;
 }
 
+#footer p {
+    line-height: 2rem;
+    margin: 0;
+    font-size: 1.2rem; /* Adjust font size */
+    color: #f44336;
+}
+
+#footer p a {
+    font-weight: 400;
+    color: black;
+    text-decoration: none;
+}
+
+#footer .social-icons {
+    margin: 2px 0;
+    padding: 0;
+    list-style: none;
+}
+
+#footer .social-icons li {
+    font-size: 1.5rem; /* Adjusted size for better compactness */
+    line-height: 1.6em;
+    display: inline-block;
+    width: 2em;
+    height: 2em;
+    margin: 0 0.5em;
+    text-align: center;
+    color: #fff;
+    border-radius: 50%;
+    background: none;
+    position: relative;
+}
+
+#footer .social-icons li:before {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: '';
+    transition: transform 0.15s ease;
+    transform: scale(1);
+    border-radius: 50%;
+    background: #13bbbd;
+}
+
+#footer .social-icons li:hover:before {
+    transform: scale(0);
+}
+
+#footer .social-icons li:after {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: '';
+    transition: transform 0.15s ease;
+    transform: scale(0);
+    border-radius: 50%;
+    background: #222;
+}
+
+#footer .social-icons li:hover:after {
+    transform: scale(1);
+}
+
+#footer .social-icons li a {
+    font-size: inherit;
+    position: relative;
+    z-index: 3;
+    display: block;
+    color: #fff;
+    border: none;
+}
+
+/* Responsive Design for Tablets and Mobile */
+@media (max-width: 768px) {
+    #footer p {
+        font-size: 1rem; /* Smaller font size for mobile */
+        margin-bottom: 1em;
+    }
+
+    #footer .social-icons {
+        margin: 15px 0;
+    }
+
+    #footer .social-icons li {
+        font-size: 1.3rem;
+        width: 2.2em;
+        height: 2.2em;
+        margin: 0 0.4em;
+    }
+
+    #footer .text-left,
+    #footer .text-right {
+        text-align: center;
+    }
+}
+
+/* Responsive Design for Small Devices (Very Small) */
+@media (max-width: 576px) {
+    #footer p {
+        font-size: 0.9rem; /* Further smaller font size */
+    }
+
+    #footer .social-icons li {
+        font-size: 1.2rem;
+        width: 2em;
+        height: 2em;
+        margin: 0 0.3em;
+    }
+}
+
+/* Additional Style for Extra Small Screens (Very Small Devices under 480px) */
+@media (max-width: 480px) {
+    #footer {
+        padding: 15px 0; /* Reduced padding for very small devices */
+    }
+
+    #footer p {
+        font-size: 0.8rem; /* Even smaller font size */
+        line-height: 1.5rem;
+        margin-bottom: 0.5em;
+    }
+
+    #footer .social-icons {
+        margin: 10px 0;
+    }
+
+    #footer .social-icons li {
+        font-size: 1rem; /* Further reduce icon size */
+        width: 1.8em; /* Compact icon width */
+        height: 1.8em; /* Compact icon height */
+        margin: 0 0.2em; /* Closer spacing between icons */
+    }
+
+    #footer .social-icons li:before {
+        width: 90%;
+        height: 90%;
+    }
+
+    #footer .social-icons li:hover:before,
+    #footer .social-icons li:hover:after {
+        transform: none; /* Disable hover effect for very small devices for better performance */
+    }
+}
 
 /* <------------About us page -------------> */
 
@@ -1280,55 +1466,118 @@ h2 {
 
 
 /* staffs  */
-
-.testimonial-section {
+/* General Styles */
+body {
+    font-family: 'Poppins', Arial, sans-serif;
     background-color: #000;
-    border-radius: 10px;
-    padding: 30px;
+    margin: 0;
+    padding: 0;
   }
 
-  .testimonial-section .carousel-item img {
-    border: 5px solid rgba(17, 52, 132, 1);
-    object-fit: cover;
+  .testimonial-section{
+    background-color: #000;
   }
-
-  .testimonial-section h5 {
-    color: #ff5a5f;
+  
+  .testimonial-section h2 {
+    font-size: 36px;
     font-weight: bold;
+    color: #36aef4;
+    margin-bottom: 40px;
   }
-  .testimonial-section h2 p{
-    color: #fff;
+  
+  .carousel-item img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border: 3px solid #36aef4;
   }
-  .carousel-control-next-icon{
-    color: #ff5a5f;
+  
+  .carousel-item h5 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 20px;
+    color: #f44336;
   }
- .testimonial-section p{
-    color: #ccc;
- }
-  .text-muted {
-    font-style: italic;
+  
+  .carousel-item p {
     font-size: 16px;
+    color: whitesmoke;
   }
-  .carousel-item text-center p{
-    background-color: #000;
-    color: #eee;
+  
+  /* Carousel Controls */
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    /* background-color: rgba(0, 0, 0, 0.5); */
+    border-radius: 50%;
   }
-
-  /* Responsive adjustments */
-  @media (max-width: 768px) {
+  
+    .carousel-control-prev-icon:hover,
+    .carousel-control-next-icon:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+  .py-5 {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+  }
+  /* Responsive Styles */
+  @media (max-width: 992px) {
+    .testimonial-section h2 {
+      font-size: 30px;
+    }
+    
     .carousel-item img {
-      width: 120px;
-      height: 120px;
+      width: 250px;
+      height: 250px;
+    }
+    
+    .carousel-item h5 {
+      font-size: 20px;
+    }
+    
+    .carousel-item p {
+      font-size: 14px;
     }
   }
-
-  @media (min-width: 769px) {
+  
+  @media (max-width: 768px) {
+    .testimonial-section h2 {
+      font-size: 26px;
+    }
+    
+    .carousel-item img {
+      width: 200px;
+      height: 200px;
+    }
+    
+    .carousel-item h5 {
+      font-size: 18px;
+    }
+    
+    .carousel-item p {
+      font-size: 14px;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .testimonial-section h2 {
+      font-size: 24px;
+    }
+    
     .carousel-item img {
       width: 150px;
       height: 150px;
     }
+    
+    .carousel-item h5 {
+      font-size: 16px;
+    }
+    
+    .carousel-item p {
+      font-size: 12px;
+    }
   }
   
+
     
   /* staff -1  */
 
@@ -1442,7 +1691,50 @@ body {
     }
   }
   
+/* slider  */
 
+/* General styling */
+.image-slider {
+    width: 100%;
+    padding: 20px;
+    overflow: hidden;
+    background-color: #f8f9fa;
+    position: relative;
+}
+
+.slider-container {
+    display: flex;
+    transition: transform 0.5s ease;
+    width: 100%;
+     /* 4 images, so container width is 400% */
+}
+
+.slider-item {
+    flex: 1 0 100%; /* Each image takes 100% width */
+    text-align: center;
+}
+
+.slider-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Responsive Design */
+
+/* For tablet screens */
+@media (max-width: 768px) {
+    .slider-item img {
+        width: 100%;
+    }
+}
+
+/* For mobile screens */
+@media (max-width: 480px) {
+    .slider-item img {
+        width: 100%;
+    }
+}
 
 
 
