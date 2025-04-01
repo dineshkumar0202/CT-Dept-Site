@@ -7,15 +7,32 @@
 body{
     background-color: #fff;
 }
-.header{
-    min-height: 100vh;
-    width: 100%;
-    background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url("image/collage main img.webp");
-    background-position: center;
-    background-size: cover;
+.header {
     position: relative;
-
+    height: 100vh;
+    overflow: hidden;
 }
+
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1; /* Place the video behind the content */
+}
+
+.text-box {
+    position: relative;
+    z-index: 1; /* Ensure the text appears above the video */
+    color: white; /* Adjust text color for better contrast */
+    text-align: center;
+    padding: 20px;
+}
+
+/* Navbar */
+
 nav{
     display: flex;
     padding: 2% 6%;
@@ -65,14 +82,15 @@ nav img{
     text-align: center;
 }
 .text-box h1{
-    font-size: 62px;
+    font-size: clamp(min,cur,upper);
 }
 .text-box h3{
     font-size: clamp(min,cur,upper);
+    font-size: 60px;
 }
 .text-box p{
     margin: 10px 0px 40px;
-    font-size: 14px;
+    font-size: 20px;
     color: white;
 }
 
@@ -98,35 +116,94 @@ nav .fa{
 
 }
 
-@media (max-width:700px){
-    .text-box h1{
+@media (max-width: 700px) {
+    .text-box h1 {
         font-size: 20px;
     }
-    .nav-links ul li{
+    .nav-links ul li {
         display: block;
     }
-    .nav-links{
+    .nav-links {
         position: fixed; 
-        background: #f44336;
+        backdrop-filter: blur(7px); /* Apply blur effect */
         height: 100vh;
         width: 200px;
         top: 0;
         right: -200px;
-        text-align:left;
+        text-align: left;
         z-index: 2;
         transition: 1s;
     }
-    nav .fa{
+    nav .fa {
         display: block;
         color: white;
         margin: 10px;
         font-size: 22px;
         cursor: pointer;
     }
-    .nav-links ul{
+    .nav-links ul {
         padding: 30px;
     }
 }
+
+/* Marquee  */
+
+.marquee-container {
+    background-color: #e0dfa6; /* Light green background */
+    padding: 10px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+}
+
+.marquee-content {
+    display: inline-block;
+    animation: marquee 15s linear infinite;
+}
+
+@keyframes marquee {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+/* Pause animation on hover */
+.marquee-container:hover .marquee-content {
+    animation-play-state: paused;
+}
+
+.marquee-link {
+    color: #ff5722; /* Link color */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold;
+}
+
+.marquee-link:hover {
+    text-decoration: underline; /* Add underline on hover */
+}
+
+.blue-text {
+    color: blue;
+    font-weight: bold;
+}
+
+.red-text {
+    color: red;
+    font-weight: bold;
+}
+
+.pink-text {
+    color: blue;
+    font-weight: bold;
+}
+
+
+
 
 
 /* Popup Styling */
@@ -1466,119 +1543,88 @@ h2 {
 
 
 /* staffs  */
-/* General Styles */
-body {
-    font-family: 'Poppins', Arial, sans-serif;
-    background-color: #000;
-    margin: 0;
-    padding: 0;
-  }
+    
+.head {
+    width: 90%;
+    max-width: 900px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    margin: 0 auto; /* Center the container horizontally */
+}
 
-  .testimonial-section{
-    background-color: #000;
-  }
-  
-  .testimonial-section h2 {
-    font-size: 36px;
-    font-weight: bold;
-    color: #36aef4;
-    margin-bottom: 40px;
-  }
-  
-  .carousel-item img {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-    border: 3px solid #36aef4;
-  }
-  
-  .carousel-item h5 {
+.hod-title {
     font-size: 24px;
     font-weight: bold;
-    margin-top: 20px;
-    color: #f44336;
-  }
-  
-  .carousel-item p {
-    font-size: 16px;
-    color: whitesmoke;
-  }
-  
-  /* Carousel Controls */
-  .carousel-control-prev-icon,
-  .carousel-control-next-icon {
-    /* background-color: rgba(0, 0, 0, 0.5); */
-    border-radius: 50%;
-  }
-  
-    .carousel-control-prev-icon:hover,
-    .carousel-control-next-icon:hover {
-        background-color: rgba(0, 0, 0, 0.8);
-    }
-  .py-5 {
-    padding-top: 1rem !important;
-    padding-bottom: 1rem !important;
-  }
-  /* Responsive Styles */
-  @media (max-width: 992px) {
-    .testimonial-section h2 {
-      font-size: 30px;
-    }
-    
-    .carousel-item img {
-      width: 250px;
-      height: 250px;
-    }
-    
-    .carousel-item h5 {
-      font-size: 20px;
-    }
-    
-    .carousel-item p {
-      font-size: 14px;
-    }
-  }
-  
-  @media (max-width: 768px) {
-    .testimonial-section h2 {
-      font-size: 26px;
-    }
-    
-    .carousel-item img {
-      width: 200px;
-      height: 200px;
-    }
-    
-    .carousel-item h5 {
-      font-size: 18px;
-    }
-    
-    .carousel-item p {
-      font-size: 14px;
-    }
-  }
-  
-  @media (max-width: 576px) {
-    .testimonial-section h2 {
-      font-size: 24px;
-    }
-    
-    .carousel-item img {
-      width: 150px;
-      height: 150px;
-    }
-    
-    .carousel-item h5 {
-      font-size: 16px;
-    }
-    
-    .carousel-item p {
-      font-size: 12px;
-    }
-  }
-  
+    margin-bottom: 40px;
+    color: black; /* Set text color to black */
+    text-align: center; /* Center the title */
+}
 
-    
+.hod-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Center content vertically */
+    text-align: center; /* Center text */
+    margin: 0 auto; /* Center the section horizontally */
+}
+
+.hod-content {
+    text-align: center;
+    margin-top: 20px;
+    color: black; /* Set text color to black */
+}
+
+.hod-content h5 {
+    font-size: 28px;
+    font-weight: bold;
+    margin: 10px 0;
+    color: black; /* Set text color to black */
+}
+
+.hod-content p {
+    font-size: 18px;
+    margin: 5px 0;
+    color: black; /* Set text color to black */
+}
+
+.hod-img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto; /* Center the image horizontally */
+    display: block; /* Ensure proper centering */
+}
+
+.hod-content a {
+    color: #ff5722; /* Link color */
+    text-decoration: slateblue; /* Remove underline */
+    font-size: 20px;
+    font-weight : 400;
+    margin-top: 15px; /* Add spacing above the link */
+    display: inline-block; /* Ensure proper spacing */
+}
+
+.hod-content a:hover {
+    text-decoration: underline; /* Add underline on hover */
+}
+
+@media (min-width: 768px) {
+    .hod-section {
+        flex-direction: row;
+        align-items: center; /* Center items vertically */
+        justify-content: center; /* Center items horizontally */
+        text-align: left;
+    }
+    .hod-content {
+        text-align: left;
+        margin-left: 30px;
+    }
+}
+
   /* staff -1  */
 
 /* Base styles */
