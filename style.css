@@ -283,7 +283,7 @@ nav .fa{
     justify-content: space-between;
 }
 .course-col{
-    flex-basis: 31%;
+    flex-basis: 100%;
     background:#fff3f3 ;
     border-radius: 10px;
     margin-bottom: 5%;
@@ -294,7 +294,7 @@ nav .fa{
 .course-col:hover{
     box-shadow: 0 0 20px 0px rgba(0,0,0,0.2);
 }
-.course-col h3{
+.course-col h1{
     text-align: center;
     font-weight: 600;
     margin: 10px 0;
@@ -304,6 +304,61 @@ nav .fa{
 @media (max-width:700px){
     .row{
         flex-direction: column;
+    }
+}
+
+/* Vi */
+
+.vm {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.vision {
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    width: 100%;
+    gap: 20px;
+}
+
+.vision-img {
+    flex: 1;
+    max-width: 50%;
+}
+
+.vision-img img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.vision-content {
+    flex: 1;
+    max-width: 50%;
+}
+
+.vision-content h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.vision-content p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .vision {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .vision-img, .vision-content {
+        max-width: 100%;
     }
 }
 
@@ -780,7 +835,7 @@ nav .fa{
 .sub-header{
     height:50vh;
     width: 100%;
-    background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url("image/Graduation\ img.jpg");
+    background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url("image/collage\ main\ img.webp");
     background-position: center;
     background-size: cover;
     text-align: center;
