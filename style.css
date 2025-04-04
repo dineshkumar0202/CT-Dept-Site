@@ -264,6 +264,10 @@ nav .fa{
     padding-top:100px ;
     text-align: center;
 }
+.course img{
+    width: 50%;
+    height: 50%;
+}
 .course h1{
     font-size: 36px;
     font-weight: 600;
@@ -452,6 +456,72 @@ nav .fa{
 
     .mission-content p {
         font-size: 1rem;
+    }
+}
+/* jop section satrt here  */
+
+.jop {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    color: #000;
+    padding: 40px 20px;
+    overflow: hidden;
+}
+
+.jop h1 {
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.jop-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    margin: 20px 0;
+}
+
+.scroll-track {
+    display: flex;
+    gap: 30px;
+    animation: scroll-left 20s linear infinite;
+}
+
+.scroll-right .scroll-track {
+    animation: scroll-right 20s linear infinite;
+}
+
+.jop-container img {
+    width: 150px;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+/* Animations */
+@keyframes scroll-left {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes scroll-right {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .jop-container img {
+        width: 100px;
     }
 }
 
