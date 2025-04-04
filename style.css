@@ -7,7 +7,7 @@
 body{
     background-color: #fff;
 }
-.header {
+#header {
     position: relative;
     height: 100vh;
     overflow: hidden;
@@ -258,23 +258,29 @@ nav .fa{
 
 /* course section start here */
 
-.course{
+#course{
     width: 80%;
     margin: auto;
     padding-top:100px ;
     text-align: center;
 }
-.course img{
+#course img{
     width: 50%;
     height: 50%;
+    transition: 0.5s;
 }
-.course h1{
+#course img:hover{
+    transform: scale(1.1);
+    transition: 0.5s;
+    
+}
+#course h1{
     font-size: 36px;
     font-weight: 600;
     color: black;
 }
-.course p{
-    color:#777 ;
+#course p{
+    color:#000 ;
      font-size: 14px;
      font-weight: 300;
      line-height: 22px;
@@ -288,16 +294,17 @@ nav .fa{
 }
 .course-col{
     flex-basis: 100%;
-    background:#fff3f3 ;
+    background:none ;
     border-radius: 10px;
     margin-bottom: 5%;
     padding: 20px 12px;
     box-sizing: border-box;
-    transition: 0.5s;
+    
 }
-.course-col:hover{
-    box-shadow: 0 0 20px 0px rgba(0,0,0,0.2);
-}
+/* .course-col:hover{
+    box-shadow: 0 0 20px 0px rgb(5, 251, 255);
+} */
+ 
 .course-col h1{
     text-align: center;
     font-weight: 600;
@@ -313,7 +320,7 @@ nav .fa{
 
 /* Vision section strat here*/
 
-.vm {
+#vm {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -387,7 +394,7 @@ nav .fa{
     }
 }    
 
-.vm {
+#vm {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -486,6 +493,7 @@ nav .fa{
     display: flex;
     gap: 30px;
     animation: scroll-left 20s linear infinite;
+    align-items: center;
 }
 
 .scroll-right .scroll-track {
@@ -494,9 +502,11 @@ nav .fa{
 
 .jop-container img {
     width: 150px;
-    height: auto;
+    height: 150px; /* Ensures consistent height */
     border-radius: 8px;
-    object-fit: cover;
+    object-fit: contain; /* or 'cover' for full-fill effect */
+    flex-shrink: 0; /* Prevents images from shrinking */
+    display: block;
 }
 
 /* Animations */
@@ -522,8 +532,10 @@ nav .fa{
 @media (max-width: 768px) {
     .jop-container img {
         width: 100px;
+        height: 100px;
     }
 }
+
 
 /* campus start here  */
 
@@ -623,38 +635,43 @@ nav .fa{
 } */
 
 /* Container for the cards */
-.cards-section .container {
+
+#cards-section .container {
     display: flex;
-        justify-content: space-around;
-        padding: 35px;
-        background-color: #000;
-        border-radius: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 35px;
+    background-color: #000;
+    border-radius: 30px;
 }
 
 .card {
     text-align: center;
     width: 30%;
+    min-width: 250px;
     padding: 20px;
     border: 3px solid #f1f1f1;
     border-radius: 10px;
     transition: transform 0.3s ease;
+    background: #fff;
 }
 
 .card:hover {
     transform: translateY(-10px);
 }
 
-/* Different border colors for each card */
+/* Different border colors */
 .card:nth-child(1) {
-    border: solid red;
+    border-color: red;
 }
 
 .card:nth-child(2) {
-    border:solid #0368ff;
+    border-color: #0368ff;
 }
 
 .card:nth-child(3) {
-    border:solid yellow;
+    border-color: yellow;
 }
 
 .card img {
@@ -666,7 +683,7 @@ nav .fa{
     color: #333;
 }
 
-/* Laboratories Section */
+/* Laboratories Section (unchanged) */
 .laboratories-section {
     padding: 40px 20px;
     background-color: #0066cc;
@@ -689,9 +706,15 @@ nav .fa{
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Responsive Design for smaller screens */
+/* Responsive */
+@media (max-width: 992px) {
+    .card {
+        width: 45%;
+    }
+}
+
 @media (max-width: 768px) {
-    .cards-section .container {
+    #cards-section .container {
         flex-direction: column;
         align-items: center;
     }
@@ -711,6 +734,7 @@ nav .fa{
         margin-bottom: 20px;
     }
 }
+
 
 
 /*----------- facilities end here ----------*/
@@ -807,7 +831,7 @@ nav .fa{
 
 /* Call to Action start */
 
-.cta{
+#cta{
     margin: 100px auto;
     width: 80%;
     background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(image/Graduation\ img.jpg);
@@ -817,12 +841,12 @@ nav .fa{
     text-align: center;
     padding: 100px 0;
 }
-.cta h1{
+#cta h1{
     color: #fff;
     margin-bottom: 40px ;
 }
 @media (max-width:700px){
-    .cta h1{
+    #cta h1{
         font-size: 24px;
     }
 }
@@ -1761,7 +1785,7 @@ h2 {
 
 /* staffs  */
     
-.head {
+#head {
     width: 90%;
     max-width: 900px;
     background: white;
