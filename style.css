@@ -1980,7 +1980,7 @@ body {
   
 /* slider  */
 
-/* General styling */
+
 .image-slider {
     width: 100%;
     padding: 20px;
@@ -2026,110 +2026,74 @@ body {
 
 /* Memories start here  */
 
-.tree-wrapper {
-    display: flex;
-    justify-content: center;
-    padding: 40px 10px;
-    background: #f0f0f0;
-  }
-  
-  .tree, .tree ul {
-    padding-top: 20px;
-    position: relative;
-    list-style: none;
-    text-align: center;
-  }
-  
-  .tree ul {
-    display: flex;
-    justify-content: center;
-  }
-  
-  .tree li {
-    position: relative;
-    padding: 20px 10px 0 10px;
-  }
-  
-  /* Connectors */
-  .tree li::before, .tree li::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    width: 50%;
-    height: 20px;
-    border-top: 2px solid #999;
-  }
-  
-  .tree li::before {
-    left: 0;
-    border-right: 2px solid #999;
-  }
-  
-  .tree li::after {
-    right: 0;
-    border-left: 2px solid #999;
-  }
-  
-  /* Remove lines for only-child */
-  .tree li:only-child::before, 
-  .tree li:only-child::after {
-    display: none;
-  }
-  
-  /* Connector above parent */
-  .tree li > ul::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 50%;
-    border-left: 2px solid #999;
-    height: 20px;
-  }
-  
-  /* Node styling */
-  .node {
-    display: inline-block;
-    text-align: center;
-    background: #fff;
-    border: 2px solid #333;
-    border-radius: 10px;
-    padding: 10px;
-    transition: 0.3s;
-  }
-  
-  .node img {
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    object-fit: cover;
-  }
-  
-  .node p {
-    margin-top: 5px;
-    font-size: 14px;
-    font-weight: bold;
-  }
-  
-  /* Hover effect */
-  .node:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 10px rgba(0,0,0,0.2);
-  }
-  
-  /* Responsive */
-  @media (max-width: 768px) {
-    .tree ul {
-      flex-direction: column;
-    }
-  
-    .tree li::before, .tree li::after, 
-    .tree li > ul::before {
-      display: none;
-    }
-  
-    .node {
-      margin-bottom: 20px;
-    }
-  }
-  
 
+.memories {
+    padding: 40px 20px;
+    background: none;
+    text-align: center;
+  }
+  .memories h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #333;
+  }
+
+  
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .memory-card {
+    flex: 0 0 calc(50% - 20px); /* 2 cards per row with gap */
+    box-sizing: border-box;
+    cursor: pointer;
+    background-color: transparent;
+    transition: transform 0.3s;
+  }
+  
+  .memory-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+  }
+  
+  .memory-card:hover img {
+    transform: scale(1.05);
+  }
+  
+  .memory-card h3 {
+    margin-top: 10px;
+    color: #333;
+  }
+  
+  /* Fullscreen overlay */
+  #fullscreenViewer {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.9);
+    align-items: center;
+    justify-content: center;
+  }
+  
+  #fullscreenViewer img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+  }
+  
+  /* Responsive (mobile view) */
+  @media (max-width: 768px) {
+    .memory-card {
+      flex: 0 0 100%; /* 1 card per row on small screens */
+    }
+  }
+  

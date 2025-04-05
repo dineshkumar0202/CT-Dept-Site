@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="/CT-Dept-Site/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
-    <link rel="icon" href="image/collage main logo.png" type="image/png" >
+    <link rel="icon" href="/CT-Dept-Site/image/collage main logo.png" type="image/png" >
     <title>EASC-Computer Technology</title>
 
 </head>
@@ -31,8 +31,8 @@
                     <li><a href="#header">HOME</a></li>
                     <li><a href="#course">ABOUT</a></li>
                     <li><a href="#vm">VISION/MISSION</a></li>
-                    <li><a href="#head">STAFFS</a></li>
-                    <li><a href="#cards-section">ABOUT US</a></li>
+                    <li><a href="#head">STAFFS</a></li>     
+                    <li><a href="#cards-section">MORE</a></li>
                     <li><a href="#cta">CONTACT</a></li>
                 </ul>
             </div>  
@@ -112,6 +112,26 @@
         </div>
     </div>
 
+
+
+
+    <section class="image-slider">
+        <h1>Gallery</h1>
+        <div class="slider-container" id="slider-container">
+            <div class="slider-item">
+                <img src="/CT-Dept-Site/image/about1.jpg" alt="Image 1">
+            </div>
+            <div class="slider-item">
+                <img src="/CT-Dept-Site/image/about2.jpg" alt="Image 2">
+            </div>
+            <div class="slider-item">
+                <img src="/CT-Dept-Site/image/about3.jpg" alt="Image 3">
+            </div>
+            <div class="slider-item">
+                <img src="/CT-Dept-Site/image/about main1.jpg" alt="Image 4">
+            </div>
+        </div>
+    </section>
 
       <!-- Carousel controls -->
      
@@ -267,12 +287,54 @@
       interval: 3000,  // Change slide every 3 seconds
       pause: 'hover'   // Pause on hover
     });
+
+
+
+
+    var navLinks = document.getElementById("navLinks");
+
+function showMenu() {
+    navLinks.style.right = "0";
+}
+
+function hideMenu() {
+    navLinks.style.right = "-200px";
+}
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const popupOverlay = document.querySelector('.popup-overlay');
+    const closeButton = document.querySelector('.close-btn');
+    
+    // Show the popup (if required on page load)
+    popupOverlay.style.display = 'flex'; // or 'block'
+    
+    // Close the popup when close button is clicked
+    closeButton.addEventListener('click', () => {
+        popupOverlay.style.display = 'none';
+    });
+});
+
+
+
+let index = 0;
+const sliderContainer = document.getElementById('slider-container');
+const totalSlides = sliderContainer.children.length;
+
+function showNextSlide() {
+index = (index + 1) % totalSlides; // Move to the next slide
+sliderContainer.style.transform = `translateX(-${index * 100}%)`;
+}
+
+// Automatically move to the next slide every 3 seconds
+setInterval(showNextSlide, 3000);
   </script>
     
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- </style> -->
-    <script src="index.js"></script>
+    <script src="/CT-Dept-Site/index.js"></script>
 </body>
 </html>

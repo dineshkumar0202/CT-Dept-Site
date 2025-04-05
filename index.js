@@ -108,8 +108,64 @@ function scrollToTop() {
 
 
 
+// Memories - scroll animation
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+      }
+    });
+  }, {
+    threshold: 0.2
+  });
+  
+  document.querySelectorAll('.tree-node.animate').forEach(node => {
+    observer.observe(node);
+  });
+  
 
 
 
+
+
+  var navLinks = document.getElementById("navLinks");
+
+  function showMenu() {
+      navLinks.style.right = "0";
+  }
+
+  function hideMenu() {
+      navLinks.style.right = "-200px";
+  }
+
+
+
+  document.addEventListener('DOMContentLoaded', () => {
+      const popupOverlay = document.querySelector('.popup-overlay');
+      const closeButton = document.querySelector('.close-btn');
+      
+      // Show the popup (if required on page load)
+      popupOverlay.style.display = 'flex'; // or 'block'
+      
+      // Close the popup when close button is clicked
+      closeButton.addEventListener('click', () => {
+          popupOverlay.style.display = 'none';
+      });
+  });
+
+
+
+  let index = 0;
+const sliderContainer = document.getElementById('slider-container');
+const totalSlides = sliderContainer.children.length;
+
+function showNextSlide() {
+index = (index + 1) % totalSlides; // Move to the next slide
+sliderContainer.style.transform = `translateX(-${index * 100}%)`;
+}
+
+// Automatically move to the next slide every 3 seconds
+setInterval(showNextSlide, 3000);
 
 

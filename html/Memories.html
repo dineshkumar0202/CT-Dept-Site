@@ -29,53 +29,61 @@
             </div>
             <i class="fa fa-bars" onclick="showMenu()"></i>
         </nav>
-        <h1> REVAMBER TO MEMORIES</h1>
+        <h1> MEMORIES</h1>
     </section><br><br><br>
 
-    <div class="tree-wrapper">
-        <ul class="tree">
-          <li>
-            <div class="node">
-              <img src="/CT-Dept-Site/image/2022-2025.HEIC" alt="Root">
-              <p>Root</p>
-            </div>
-            <ul>
-              <li>
-                <div class="node">
-                  <img src="/CT-Dept-Site/image/2022-2025.HEIC" alt="Child 1">
-                  <p>Child 1</p>
-                </div>
-                <ul>
-                  <li>
-                    <div class="node">
-                      <img src="/CT-Dept-Site/image/2022-2025.HEIC" alt="Leaf 1">
-                      <p>Leaf 1</p>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="node">
-                      <img src="/CT-Dept-Site/image/2022-2025.HEIC" alt="Leaf 2">
-                      <p>Leaf 2</p>
-                    </div>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <div class="node">
-                  <img src="/CT-Dept-Site/image/2022-2025.HEIC" alt="Child 2">
-                  <p>Child 2</p>
-                </div>
-              </li>
-              <li>
-                <div class="node">
-                  <img src="/CT-Dept-Site/image/2022-2025.HEIC" alt="Child 3">
-                  <p>Child 3</p>
-                </div>
-              </li>
-            </ul>
-          </li>
-        </ul>
+    <section class="memories">
+      <div class="container">
+        <h1>List</h1>
+        <div class="row">
+          <div class="memory-card">
+            <img src="/CT-Dept-Site/image/CT-22-25.png" alt="Memory 1" onclick="openFullscreen(this)">
+            <h3>2022–2025</h3>
+          </div>
+          <div class="memory-card">
+            <img src="/CT-Dept-Site/image/CT-22-25.png" alt="Memory 2" onclick="openFullscreen(this)">
+            <h3>2022–2025</h3>
+          </div>
+          <div class="memory-card">
+            <img src="/CT-Dept-Site/image/CT-22-25.png" alt="Memory 3" onclick="openFullscreen(this)">
+            <h3>2022–2025</h3>
+          </div>
+          <div class="memory-card">
+            <img src="/CT-Dept-Site/image/CT-22-25.png" alt="Memory 4" onclick="openFullscreen(this)">
+            <h3>2022–2025</h3>
+          </div>
+        </div>
       </div>
-      
+    
+      <!-- Fullscreen Viewer -->
+      <div id="fullscreenViewer" onclick="closeFullscreen()">
+        <img id="fullscreenImage" src="" alt="Full screen view">
+      </div>
+    </section>
+    
+    
+    <script>
+      function openFullscreen(imgElement) {
+        const viewer = document.getElementById("fullscreenViewer");
+        const fullImg = document.getElementById("fullscreenImage");
+        fullImg.src = imgElement.src;
+        viewer.style.display = "flex";
+      }
+    
+      function closeFullscreen() {
+        document.getElementById("fullscreenViewer").style.display = "none";
+      }
+
+
+      function showMenu() {
+            document.getElementById("navLinks").style.right = "0";
+        }
+
+        function hideMenu() {
+            document.getElementById("navLinks").style.right = "-200px";
+        }
+    </script>
+    
+    <script src="/CT-Dept-Site/index.js"></script>
     </body>
 </html>
