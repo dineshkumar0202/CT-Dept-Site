@@ -2024,4 +2024,112 @@ body {
 }
 
 
+/* Memories start here  */
+
+.tree-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 40px 10px;
+    background: #f0f0f0;
+  }
+  
+  .tree, .tree ul {
+    padding-top: 20px;
+    position: relative;
+    list-style: none;
+    text-align: center;
+  }
+  
+  .tree ul {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .tree li {
+    position: relative;
+    padding: 20px 10px 0 10px;
+  }
+  
+  /* Connectors */
+  .tree li::before, .tree li::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 20px;
+    border-top: 2px solid #999;
+  }
+  
+  .tree li::before {
+    left: 0;
+    border-right: 2px solid #999;
+  }
+  
+  .tree li::after {
+    right: 0;
+    border-left: 2px solid #999;
+  }
+  
+  /* Remove lines for only-child */
+  .tree li:only-child::before, 
+  .tree li:only-child::after {
+    display: none;
+  }
+  
+  /* Connector above parent */
+  .tree li > ul::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    border-left: 2px solid #999;
+    height: 20px;
+  }
+  
+  /* Node styling */
+  .node {
+    display: inline-block;
+    text-align: center;
+    background: #fff;
+    border: 2px solid #333;
+    border-radius: 10px;
+    padding: 10px;
+    transition: 0.3s;
+  }
+  
+  .node img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .node p {
+    margin-top: 5px;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+  /* Hover effect */
+  .node:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .tree ul {
+      flex-direction: column;
+    }
+  
+    .tree li::before, .tree li::after, 
+    .tree li > ul::before {
+      display: none;
+    }
+  
+    .node {
+      margin-bottom: 20px;
+    }
+  }
+  
 
