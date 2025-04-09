@@ -11,10 +11,11 @@
     <link rel="stylesheet" href="/CT-Dept-Site/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
     <link rel="icon" href="/CT-Dept-Site/image/collage main logo.png" type="image/png" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
     <title>EASC-Computer Technology</title>
 
 </head>
-<body>
+<body class="animate-me">
     <!-- Header Section -->
     <section id="header">
         <!-- Background Video -->
@@ -117,54 +118,89 @@
 
     <section class="image-slider">
         <h1>Gallery</h1>
-        <div class="slider-container" id="slider-container">
-            <div class="slider-item">
-                <img src="/CT-Dept-Site/image/about1.jpg" alt="Image 1">
-            </div>
-            <div class="slider-item">
-                <img src="/CT-Dept-Site/image/about2.jpg" alt="Image 2">
-            </div>
-            <div class="slider-item">
-                <img src="/CT-Dept-Site/image/about3.jpg" alt="Image 3">
-            </div>
-            <div class="slider-item">
-                <img src="/CT-Dept-Site/image/about main1.jpg" alt="Image 4">
+        <div class="slider-container">
+            <div class="slider-track">
+                <div class="slider-item">
+                    <img src="/CT-Dept-Site/image/about1.jpg" alt="Image 1">
+                </div>
+                <div class="slider-item">
+                    <img src="/CT-Dept-Site/image/about2.jpg" alt="Image 2">
+                </div>
+                <div class="slider-item">
+                    <img src="/CT-Dept-Site/image/about3.jpg" alt="Image 3">
+                </div>
+                <div class="slider-item">
+                    <img src="/CT-Dept-Site/image/about%20main1.jpg" alt="Image 4">
+                </div>
+                <div class="slider-item">
+                    <img src="/CT-Dept-Site/image/" alt="Image 4">
+                </div>
             </div>
         </div>
     </section>
+    
 
       <!-- Carousel controls -->
      
    
-    <!-- <section class="campus">
+      <section class="campus">
         <h1>Our Campus</h1>
         <p>Our Campus interview selected students list.</p>
-        <div class="row">
-            <div class="campus-col">
-                <img src="image/Graduation student.jpg" alt="Student 1">
-                <div class="layer">
-                    <h3>
-                        Student-1
-                    </h3>
-                    <h4>2020</h4>
-                </div>
+        <div class="row" id="campusList">
+          <!-- Always visible -->
+          <div class="campus-col">
+            <img src="/CT-Dept-Site/image/Graduation student.jpg" alt="Student 1">
+            <div class="layer">
+              <h3>Student-1</h3>
+              <h4>2020</h4>
             </div>
-            <div class="campus-col">
-                <img src="image/Graduation student.jpg" alt="Student 2">
-                <div class="layer">
-                    <h3>Student-2</h3>
-                    <h4>2020</h4>
-                </div>
+          </div>
+          <div class="campus-col">
+            <img src="/CT-Dept-Site/image/Graduation student.jpg" alt="Student 2">
+            <div class="layer">
+              <h3>Student-2</h3>
+              <h4>2020</h4>
             </div>
-            <div class="campus-col">
-                <img src="image/Graduation student.jpg" alt="Student 3">
-                <div class="layer">
-                    <h3>Student-3</h3>
-                    <h4>2020</h4>
-                </div>
+          </div>
+          <div class="campus-col">
+            <img src="/CT-Dept-Site/image/Graduation student.jpg" alt="Student 3">
+            <div class="layer">
+              <h3>Student-3</h3>
+              <h4>2020</h4>
             </div>
+          </div>
+      
+          <!-- Hidden by default -->
+          <div class="campus-col extra" style="display: none;">
+            <img src="/CT-Dept-Site/image/Graduation student.jpg" alt="Student 4">
+            <div class="layer">
+              <h3>Student-4</h3>
+              <h4>2020</h4>
+            </div>
+          </div>
+          <div class="campus-col extra" style="display: none;">
+            <img src="/CT-Dept-Site/image/Graduation student.jpg" alt="Student 5">
+            <div class="layer">
+              <h3>Student-5</h3>
+              <h4>2020</h4>
+            </div>
+          </div>
+          <div class="campus-col extra" style="display: none;">
+            <img src="/CT-Dept-Site/image/Graduation student.jpg" alt="Student 6">
+            <div class="layer">
+              <h3>Student-6</h3>
+              <h4>2020</h4>
+            </div>
+          </div>
         </div>
-    </section> -->
+      
+        <!-- Toggle Buttons -->
+        <div style="text-align: center; margin-top: 20px;">
+          <button onclick="toggleCampus()" id="toggleBtn" class="hero-btn">Show More</button>
+        </div>
+      </section>
+      
+      
 
     <br><br><br><br>
 
@@ -185,7 +221,7 @@
             <h3>About Us</h3>
           </div>
           <div class="card">
-            <a href="./Memories.html"><img src="/CT-Dept-Site/image/about us.png" alt="Memories" /></a>
+            <a href="./Memories.html"><img src="/CT-Dept-Site/image/Memories.png" alt="Memories" /></a>
             <h3>Memories</h3>
           </div>
         </div>
@@ -223,6 +259,8 @@
 
 
  
+    <!-- Back to Top Button -->
+    <button class="top-button" onclick="scrollToTop()">&#8679;</button>
 
     <!-- Call to Action Section -->
     <section id="cta">
@@ -231,52 +269,48 @@
     </section>
      
 
-    <!-- Back to Top Button -->
-    <button class="top-button" onclick="scrollToTop()">&#8679;</button>
 
 
     <!-- Footer -->
-    <section id="footer">
-         
-        <!-- CONTAINER FLUID -->
-        <div class="container-fluid">
 
 
-            <!-- ROW -->
-            <div class="row">
-
-
-                <!-- COLUMN -->
-                <div class="col-sm-6 scroll-animated-from-bottom text-left">
-
-                    <p>© DK | Design by <a href="https://dineshkumar-web.netlify.app/">Dineshkumar-DK</a></p>
-
-                </div>
-                <!-- /COLUMN -->
-
-                <!-- COLUMN -->
-                <div class="col-sm-6 scroll-animated-from-bottom text-right">
-
-                    <!-- SOCIAL ICONS -->
-                    <ul class="social-icons">
-                        
-                        <!-- <li><a href="https://web.whatsapp.com/"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a></li> -->
-                        <li><a href="https://www.instagram.com/itz.dinesh.dk/"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a></li>
-                        <li><a href="https://github.com/dineshkumar0202"><i class="fa-brands fa-github" aria-hidden="true"></i></a></li>
-                        <li><a href="https://www.linkedin.com/in/dineshkumar93/"><i class="fa-brands fa-linkedin" aria-hidden="true"></i></a></li>
-                   
-                    </ul>
-                    <!-- /SOCIAL ICONS -->
-                </div>
-                <!-- /COLUMN -->
+    <footer class="modern-footer">
+        <div class="footer-container">
+          <!-- Column 1: About -->
+          <div class="footer-col">
+            <h3>About</h3>
+            <p>Welcome to our site! Stay connected and updated through our socials below.</p>
+          </div>
+      
+          <!-- Column 2: Social Links -->
+          <div class="footer-col">
+            <h3>Follow Us</h3>
+            <div class="footer-social-icons">
+              <img src="" alt=""><a href="https://www.instagram.com/itz.dinesh.dk/" target="_blank" aria-label="Instagram">
+                <img src="/CT-Dept-Site/image/instagram-logo.png" alt="instagram">
+              </a>
+              <a href="https://youtube.com" target="_blank" aria-label="YouTube">
+                <img src="/CT-Dept-Site/image/youtube-icon.png" alt="youtube">
+              </a>
+              <a href="https://wa.me/1234567890" target="_blank" aria-label="WhatsApp">
+                <img src="/CT-Dept-Site/image/whatsapp-icon.png" alt="whatsapp">
+              </a>
+              <a href="https://www.linkedin.com/in/dineshkumar93/" target="_blank" aria-label="linkedin">
+                <img src="/CT-Dept-Site/image/linkedin-icon.png" alt="linkedin">
+              </a>
             </div>
-            <!-- ROW -->
+          </div>
+      
+          <!-- Column 3: Credit -->
+          <div class="footer-col">
+            <h3>Credits</h3>
+            <a href="https://dineshkumar-web.netlify.app/" class="creator-credit">@DINESH(DK)</a>
+          </div>
         </div>
-        <!-- /CONTAINER FLUID -->
-    </section>
+      </footer>
+      
 
-      <!-- Back to Top Button -->
-      <button class="top-button" onclick="scrollToTop()">&#8679;</button>
+    
 
 
 
@@ -329,11 +363,60 @@ sliderContainer.style.transform = `translateX(-${index * 100}%)`;
 
 // Automatically move to the next slide every 3 seconds
 setInterval(showNextSlide, 3000);
+
+
+
+function toggleCampus() {
+  const extras = document.querySelectorAll('.campus-col.extra');
+  const button = document.getElementById('toggleBtn');
+  const isHidden = extras[0].style.display === 'none';
+
+  extras.forEach(el => el.style.display = isHidden ? 'block' : 'none');
+  button.textContent = isHidden ? 'Show Less' : 'Show More';
+}
+
+
+
+
+
+
+  // Function to animate an element when it's scrolled into view
+  function animateOnScroll(targets, animationOptions) {
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          anime({
+            targets: entry.target,
+            ...animationOptions
+          });
+          observer.unobserve(entry.target); // Only animate once
+        }
+      });
+    }, {
+      threshold: 0.2
+    });
+
+    // Observe each target
+    document.querySelectorAll(targets).forEach(el => observer.observe(el));
+  }
+
+  // Usage example
+  document.addEventListener('DOMContentLoaded', () => {
+    animateOnScroll('.animate-me', {
+      translateX: [0, 100],
+      opacity: [0, 1],
+      duration: 1000,
+      easing: 'easeOutExpo'
+    });
+  });
+
+
   </script>
     
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
     <!-- </style> -->
     <script src="/CT-Dept-Site/index.js"></script>
 </body>

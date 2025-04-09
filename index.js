@@ -169,3 +169,18 @@ sliderContainer.style.transform = `translateX(-${index * 100}%)`;
 setInterval(showNextSlide, 3000);
 
 
+
+
+
+function showMoreCampus() {
+    const extras = document.querySelectorAll('.campus-col.extra');
+    extras.forEach(el => el.style.display = 'block');
+    document.getElementById('showMoreBtn').style.display = 'none'; // Hide button after showing
+  }
+  
+
+
+
+
+
+
